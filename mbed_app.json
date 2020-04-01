@@ -1,0 +1,27 @@
+{
+    "config": {
+        "reset_flash_button_pin_name": {
+            "help": "The pin name used as Reset-Flash button in this application",
+            "macro_name": "RESET_FLASH_BUTTON_PIN_NAME",
+            "required": true
+        },
+        "reset_flash_button_pin_pull": {
+            "help": "The Reset-Flsah button may need a pull-up. Possible values are PullUp, PullDown, PullNone (default).",
+            "macro_name": "RESET_FLASH_BUTTON_PIN_PULL",
+            "value": "PullNone"
+        }
+    },
+    "target_overrides": {
+        "CY8CKIT_062S2_43012": {
+            "target.components_remove" : ["CYW43XXX"],
+            "platform.stdio-convert-newlines": true,
+            "target.network-default-interface-type": "WIFI",
+            "nsapi.default-wifi-security": "WPA_WPA2",
+            "nsapi.default-wifi-ssid": "\"SSID\"",
+            "nsapi.default-wifi-password": "\"PASSWORD\"",
+            "platform.stdio-baud-rate": 115200,
+            "reset_flash_button_pin_name": "BUTTON1",
+            "reset_flash_button_pin_pull": "PullUp"
+        }
+    }
+}
